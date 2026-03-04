@@ -36,3 +36,6 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+frontend/.next
+frontend/node_modules
+backend/node_modules
