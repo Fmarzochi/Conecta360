@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="mt-1 text-sm">Consultoria Integrada de Apoio à Gestão.</p>
         </div>
         <div className="text-sm text-center md:text-right">
-          &copy; {new Date().getFullYear()} Conecta 360º. Todos os direitos reservados.<br />
+          &copy; 2024 - Conecta 360º. Todos os direitos reservados.<br />
           Natal - Rio Grande do Norte
         </div>
       </div>
