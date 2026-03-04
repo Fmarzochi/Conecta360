@@ -1,6 +1,6 @@
 # Conecta 360º - Frontend Corporativo
 
-![Status](https://img.shields.io/badge/Status-Frontend_Concluído-success)
+![Status](https://img.shields.io/badge/Status-Frontend_Em andamento.)
 ![Next.js](https://img.shields.io/badge/Framework-Next.js%2015-black)
 ![Tailwind](https://img.shields.io/badge/CSS-Tailwind%20CSS-blue)
 ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)
