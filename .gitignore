@@ -1,0 +1,46 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next
+.next/
+out/
+
+# Build
+dist/
+build/
+coverage/
+
+# Environment
+.env
+.env.local
+.env.development
+.env.production
+frontend/.env*
+backend/.env*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary
+tmp/
+temp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Docker
+docker-compose.override.yml
