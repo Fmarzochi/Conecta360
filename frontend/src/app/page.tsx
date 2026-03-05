@@ -9,11 +9,10 @@ import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen w-full bg-white">
       <Header />
 
-      {/* O paddingTop compensa o Header fixo para o scroll suave funcionar bem */}
-      <div className="pt-20">
+      <div className="pt-20 w-full">
         <Hero />
         <About />
         <Services />

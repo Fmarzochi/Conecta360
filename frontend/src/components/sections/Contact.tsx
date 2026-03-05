@@ -16,13 +16,78 @@ export default function Contact() {
           }
         `}} />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex justify-center">
+
+          {/* Botão Refinado com Shimmer Sweep e Ícone */}
           <a
             href="mailto:louiserakel@hotmail.com?subject=Contato%20via%20Site%20Conecta%20360&body=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20Conecta%20360."
-            className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-lg text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-2xl hover:-translate-y-1"
+            className="
+              group
+              relative
+              inline-flex
+              items-center
+              justify-center
+              gap-2
+              px-10
+              py-5
+              text-lg
+              font-bold
+              rounded-lg
+              text-white
+              bg-slate-900
+              hover:bg-slate-800
+              active:scale-95
+              transition-all
+              duration-300
+              overflow-hidden
+              focus:outline-none
+              focus:ring-2
+              focus:ring-white/30
+              focus:ring-offset-2
+              focus:ring-offset-amber-500
+              w-full
+              sm:w-auto
+              shadow-xl
+            "
           >
-            Enviar Mensagem
+            <span className="relative z-10 flex items-center gap-2">
+              Enviar Mensagem
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                />
+              </svg>
+            </span>
+
+            {/* Efeito Shimmer Sweep */}
+            <span
+              className="
+                absolute
+                inset-0
+                -translate-x-full
+                bg-gradient-to-r
+                from-transparent
+                via-white/20
+                to-transparent
+                group-hover:translate-x-full
+                transition-transform
+                duration-700
+                pointer-events-none
+              "
+            />
           </a>
+
         </div>
       </section>
 

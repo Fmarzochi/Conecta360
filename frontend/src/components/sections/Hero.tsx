@@ -12,14 +12,80 @@ export default function Hero() {
           Consultoria integrada que estrutura, organiza e impulsiona empresas com visão estratégica e multidisciplinar.
         </p>
         <div className="flex justify-center">
+
+          {/* Botão com efeito Shimmer Sweep, SVG Animado e Tamanho Ampliado */}
           <a
             href="https://wa.me/5584987251813"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-md text-slate-900 bg-amber-500 hover:bg-amber-400 transition-all shadow-lg hover:shadow-amber-500/30 transform hover:-translate-y-1"
+            className="
+              group
+              relative
+              inline-flex
+              items-center
+              justify-center
+              gap-3
+              px-10
+              py-5
+              text-lg
+              font-bold
+              rounded-lg
+              text-slate-900
+              bg-amber-500
+              hover:bg-amber-400
+              active:scale-95
+              transition-all
+              duration-300
+              overflow-hidden
+              focus:outline-none
+              focus:ring-2
+              focus:ring-amber-500/50
+              focus:ring-offset-2
+              focus:ring-offset-slate-900
+              shadow-lg
+              hover:shadow-amber-500/30
+              w-full
+              sm:w-auto
+            "
           >
-            Fale com a nossa especialista
+            <span className="relative z-10 flex items-center gap-3">
+              Fale com a nossa especialista
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                />
+              </svg>
+            </span>
+
+            {/* Efeito Shimmer Sweep */}
+            <span
+              className="
+                absolute
+                inset-0
+                -translate-x-full
+                bg-gradient-to-r
+                from-transparent
+                via-white/40
+                to-transparent
+                group-hover:translate-x-full
+                transition-transform
+                duration-700
+                pointer-events-none
+              "
+            />
           </a>
+
         </div>
       </div>
     </section>
