@@ -54,7 +54,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center px-6 py-3.5 text-white text-[15px] font-semibold rounded-xl bg-slate-900 hover:bg-slate-800 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/50"
+            className="w-full inline-flex items-center justify-center px-6 py-3.5 text-white text-[15px] font-semibold rounded-xl bg-black hover:bg-neutral-900 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50"
           >
             Entrar
           </button>

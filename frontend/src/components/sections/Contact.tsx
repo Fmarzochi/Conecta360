@@ -34,8 +34,8 @@ export default function Contact() {
               font-bold
               rounded-lg
               text-white
-              bg-slate-900
-              hover:bg-slate-800
+              bg-black
+              hover:bg-neutral-800
               active:scale-95
               transition-all
               duration-300

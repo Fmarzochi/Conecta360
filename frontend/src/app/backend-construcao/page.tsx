@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export default function BackendConstrucao() {
   return (
-    <main className="min-h-screen w-full bg-slate-900 flex flex-col items-center justify-center px-4 text-center">
-      <div className="bg-slate-800/50 p-12 rounded-3xl border border-slate-700 max-w-lg w-full shadow-2xl">
+    <main className="min-h-screen w-full bg-black flex flex-col items-center justify-center px-4 text-center">
+      <div className="bg-black p-12 rounded-3xl border border-slate-700 max-w-lg w-full shadow-2xl">
         <div className="flex justify-center mb-8">
           <svg
             className="w-24 h-24 text-amber-500 animate-pulse"

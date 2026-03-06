@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-slate-900 overflow-hidden">
+    <section id="inicio" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 animate-fade-in-up">
           Conectando estratégia, <br className="hidden md:block" />
@@ -12,8 +12,6 @@ export default function Hero() {
           Consultoria integrada que estrutura, organiza e impulsiona empresas com visão estratégica e multidisciplinar.
         </p>
         <div className="flex justify-center">
-
-          {/* Botão com efeito Shimmer Sweep, SVG Animado e Tamanho Ampliado */}
           <a
             href="https://wa.me/5584987251813"
             target="_blank"
@@ -41,7 +39,7 @@ export default function Hero() {
               focus:ring-2
               focus:ring-amber-500/50
               focus:ring-offset-2
-              focus:ring-offset-slate-900
+              focus:ring-offset-black
               shadow-lg
               hover:shadow-amber-500/30
               w-full
@@ -50,7 +48,6 @@ export default function Hero() {
           >
             <span className="relative z-10 flex items-center gap-3">
               Fale com a nossa especialista
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1"
@@ -68,7 +65,6 @@ export default function Hero() {
               </svg>
             </span>
 
-            {/* Efeito Shimmer Sweep */}
             <span
               className="
                 absolute
@@ -85,7 +81,6 @@ export default function Hero() {
               "
             />
           </a>
-
         </div>
       </div>
     </section>

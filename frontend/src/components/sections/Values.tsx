@@ -1,12 +1,11 @@
 import React from 'react';
 
 const valuesList = [
-  { title: "Excelência Estratégica", desc: "Planejamento e execução de alto nível." },
-  { title: "Inovação Tecnológica", desc: "Soluções modernas para problemas complexos." },
-  { title: "Desenvolvimento Humano", desc: "Pessoas no centro do crescimento." },
-  { title: "Conformidade e Segurança", desc: "Atuação ética e respeito às normas." },
-  { title: "Parceria e Confiança", desc: "Relações sólidas com nossos clientes." },
-  { title: "Resultados Sustentáveis", desc: "Crescimento contínuo e estruturado." }
+  { title: "Foco no Sucesso do Cliente", desc: "O crescimento do cliente é nossa principal medida de desempenho. Atuamos com proximidade, escuta ativa e comprometimento real com resultados." },
+  { title: "Gestão Estratégica e Qualificada", desc: "Unimos conhecimento técnico, experiência prática e visão sistêmica para garantir decisões seguras e direcionamento claro." },
+  { title: "Performance com Qualidade", desc: "Trabalhamos com organização, indicadores e acompanhamento constante para assegurar entregas ágeis, eficientes e de alto padrão." },
+  { title: "Ética e Transparência", desc: "Conduzimos cada projeto com responsabilidade, conformidade normativa e clareza nas relações." },
+  { title: "Desenvolvimento Sustentável", desc: "Buscamos resultados sólidos e duradouros, fortalecendo a empresa hoje e preparando a para crescer de forma estruturada no futuro." }
 ];
 
 export default function Values() {
@@ -14,7 +13,9 @@ export default function Values() {
     <section id="valores" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-wide">Nossos Valores</h2>
+          <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-wide">
+            NOSSOS VALORES
+          </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto mt-6 rounded-full"></div>
         </div>
 
