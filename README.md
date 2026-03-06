@@ -60,12 +60,20 @@ Este projeto utiliza uma estrutura limpa, isolando as responsabilidades de estil
 - [x] Limpeza de arquivos residuais e boilerplates desnecessários.
 - [x] Validação de responsabilidade mobile e tablet.
 
+### Fase 5: Roteamento & Fluxo de Autenticação 🔐
+- [x] Eu criei a nova rota `/login` com interface de formulário e validação visual de campos obrigatórios.
+- [x] Eu desenvolvi a página de status `/backend-construcao` com layout centralizado, animações e feedback visual.
+- [x] Eu implementei ajustes finos de responsividade no Header, incluindo um novo item de menu e um comportamento inteligente para o logo (centralizado e clicável apenas no mobile).
+
 ---
 
 📌 **Status atual:**
-O frontend encontra-se **100% estabilizado e funcional**. A arquitetura de rotas e componentes foi validada, e o sistema está pronto para ser conectado a serviços de deploy contínuo ou expansão de funcionalidades dinâmicas. O código está limpo, sem dependências desnecessárias e devidamente versionado no GitHub.
+O frontend encontra-se **100% estabilizado e funcional**, agora incluindo um fluxo de navegação simulado para áreas restritas. A arquitetura de rotas e componentes foi validada, e o sistema está pronto para ser conectado aos serviços do backend que serão construídos. O código está limpo, sem dependências desnecessárias e devidamente versionado no GitHub.
 
 ---
 
 ## 🚀 Próximos Passos
 
+- [ ] Iniciar a estruturação da camada de Backend (API e Banco de Dados).
+- [ ] Conectar o formulário de `/login` com rotas de autenticação reais (ex: JWT ou NextAuth).
+- [ ] Configuração de um pipeline de CI/CD para automação de testes e deploy corporativo.
