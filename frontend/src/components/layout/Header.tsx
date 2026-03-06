@@ -35,7 +35,7 @@ export default function Header() {
           <div className="hidden md:flex items-center -mr-3 lg:-mr-6">
             <a
               href="/#contato"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-white text-sm font-semibold rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-lg hover:bg-slate-800/90 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/50 focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-white text-sm font-semibold rounded-xl bg-black backdrop-blur-md border border-slate-700/50 shadow-lg hover:bg-neutral-800 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
             >
               Falar Conosco
             </a>
