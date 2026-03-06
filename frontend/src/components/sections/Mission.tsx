@@ -12,7 +12,9 @@ export default function Mission() {
             <p className="text-slate-300 leading-relaxed text-lg">
               Ser referência nacional em soluções empresariais integradas, reconhecida por estruturar, organizar e impulsionar empresas com estratégia, inteligência e alta performance.
               <br /><br />
-              Queremos ser a escolha de empresas que buscam crescimento com direção, segurança e resultados consistentes conectando pessoas, decisões e execução a uma gestão profissional e sustentável.
+              Queremos ser a escolha de empresas que buscam crescimento com direção, segurança e resultados consistentes, conectando pessoas, decisões e execução a uma gestão profissional e sustentável.
+              <br /><br />
+              Também buscamos fortalecer a cultura de gestão profissional nas organizações, apoiando empresas na construção de processos mais claros, decisões mais assertivas e resultados duradouros.
             </p>
           </div>
 
@@ -21,30 +23,16 @@ export default function Mission() {
             <h3 className="text-2xl font-bold text-amber-500 mb-6 uppercase tracking-wide">MISSÃO</h3>
             <div className="text-slate-300 leading-relaxed text-lg space-y-4">
               <p>
-                A Conecta 360 nasce da união entre experiência prática, visão estratégica e desenvolvimento humano.
+                A Conecta 360 tem como missão organizar, estruturar e impulsionar empresas por meio de uma gestão eficiente, estratégica e humanizada.
               </p>
               <p>
-                Fundada por Louise Rakel, psicóloga com atuação em Recursos Humanos e trajetória empreendedora, a empresa carrega a vivência real de quem conhece os desafios da gestão por dentro tanto na estrutura organizacional quanto na experiência de empreender.
+                Acreditamos que empresas crescem de forma sustentável quando existe clareza na gestão, processos bem estruturados e pessoas preparadas para gerar resultados.
               </p>
               <p>
-                Nossa missão é organizar, estruturar e impulsionar empresas com gestão qualificada, visão sistêmica e foco absoluto no sucesso do cliente.
+                Por isso, atuamos apoiando organizações na construção de estruturas mais organizadas, produtivas e alinhadas aos seus objetivos, sempre com foco no sucesso do cliente e no desenvolvimento das pessoas.
               </p>
-              <p>
-                Atuamos de forma multidisciplinar, com profissionais selecionados a partir de um banco de talentos próprio e estratégico, formado por especialistas previamente avaliados e recrutados com base em critérios técnicos, comportamentais e de performance.
-              </p>
-              <p>
-                Isso garante que cada projeto seja conduzido por profissionais adequados à real necessidade do cliente assegurando qualidade nas entregas, cumprimento de prazos e alta performance.
-              </p>
-              <p className="font-semibold text-white">Nosso compromisso é oferecer:</p>
-              <ul className="list-none space-y-1">
-                <li>Excelência no atendimento</li>
-                <li>Agilidade e responsabilidade nas entregas</li>
-                <li>Projetos bem direcionados e acompanhados</li>
-                <li>Gestão eficiente, organizada e mensurável</li>
-                <li>Crescimento estruturado e sustentável</li>
-              </ul>
               <p className="pt-2 italic">
-                Mais do que prestar serviços, entregamos estrutura, direção e resultados consistentes.
+                Mais do que prestar serviços, nosso propósito é contribuir para empresas mais organizadas, humanas e preparadas para crescer.
               </p>
             </div>
           </div>
