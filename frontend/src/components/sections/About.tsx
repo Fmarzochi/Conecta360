@@ -25,7 +25,7 @@ export default function About() {
           Sua trajetória também inclui o empreendedorismo no ramo de alimentação, onde viveu intensamente os desafios reais de marketing, área comercial, atendimento, posicionamento e resultado. Foi nesse cenário que consolidou sua visão ampla de negócios e fortaleceu sua capacidade de integrar estratégia com execução.
         </p>
         <p className="text-justify text-lg leading-relaxed text-slate-600 mb-6">
-          Reconhecida como a profissional mais seguida no LinkedIn no estado do Rio Grande do Norte, Louise aplica diariamente estratégias de posicionamento, branding e performance — tanto na construção da sua marca quanto no desenvolvimento estratégico de seus clientes.
+          Reconhecida como a profissional mais seguida no LinkedIn no estado do Rio Grande do Norte, Louise aplica diariamente estratégias de posicionamento, branding e performance tanto na construção da sua marca quanto no desenvolvimento estratégico de seus clientes.
         </p>
         <p className="text-justify text-lg leading-relaxed text-slate-600 mb-6">
           Sua personalidade firme, visão sistêmica e condução estratégica de projetos são pilares da <strong>Conecta 360º</strong>. Cada projeto é acompanhado sob sua liderança direta, garantindo qualidade, clareza, cumprimento de prazos e excelência nas entregas.

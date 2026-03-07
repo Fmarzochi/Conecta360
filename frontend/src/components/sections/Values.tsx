@@ -66,8 +66,8 @@ export default function Values() {
               <div className="w-12 h-12 bg-white text-amber-500 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-amber-500 group-hover:text-white transition-colors">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
-              <p className="text-justify text-slate-600 leading-relaxed">{value.description}</p>
+              <h3 className="text-left text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
+              <p className="text-left text-slate-600 leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>

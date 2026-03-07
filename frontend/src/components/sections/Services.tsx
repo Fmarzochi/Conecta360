@@ -104,7 +104,7 @@ export default function Services() {
                 {service.icon}
               </div>
 
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-left text-lg font-bold text-slate-900">
                 {service.title}
               </h3>
 
