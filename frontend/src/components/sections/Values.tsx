@@ -67,7 +67,7 @@ export default function Values() {
                 {value.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{value.description}</p>
+              <p className="text-justify text-slate-600 leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>

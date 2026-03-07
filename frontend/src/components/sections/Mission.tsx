@@ -9,7 +9,7 @@ export default function Mission() {
           {/* Visão */}
           <div className="bg-black/40 backdrop-blur-md p-10 rounded-2xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300">
             <h3 className="text-2xl font-bold text-amber-500 mb-6 uppercase tracking-wide">VISÃO</h3>
-            <p className="text-slate-300 leading-relaxed text-lg">
+            <p className="text-justify text-slate-300 leading-relaxed text-lg">
               Ser referência nacional em soluções empresariais integradas, reconhecida por estruturar, organizar e impulsionar empresas com estratégia, inteligência e alta performance.
               <br /><br />
               Queremos ser a escolha de empresas que buscam crescimento com direção, segurança e resultados consistentes, conectando pessoas, decisões e execução a uma gestão profissional e sustentável.
@@ -21,7 +21,7 @@ export default function Mission() {
           {/* Missão */}
           <div className="bg-black/40 backdrop-blur-md p-10 rounded-2xl border border-slate-700 hover:border-amber-500/50 transition-all duration-300">
             <h3 className="text-2xl font-bold text-amber-500 mb-6 uppercase tracking-wide">MISSÃO</h3>
-            <div className="text-slate-300 leading-relaxed text-lg space-y-4">
+            <div className="text-justify text-slate-300 leading-relaxed text-lg space-y-4">
               <p>
                 A Conecta 360 tem como missão organizar, estruturar e impulsionar empresas por meio de uma gestão eficiente, estratégica e humanizada.
               </p>
