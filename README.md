@@ -1,9 +1,13 @@
+**Status:** 🚧 Em andamento
+
 # Conecta 360º - Frontend Corporativo
 
 ![Next.js](https://img.shields.io/badge/Framework-Next.js%2015-black)
+![React](https://img.shields.io/badge/Library-React-blue)
 ![Tailwind](https://img.shields.io/badge/CSS-Tailwind%20CSS-blue)
 ![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-Monorepo_Modular-lightgrey)
+![Vercel](https://img.shields.io/badge/Hosting-Vercel-black)
 
 ## 📌 Sobre o Projeto
 
@@ -77,3 +81,11 @@ O frontend encontra-se **100% estabilizado e funcional**, agora incluindo um flu
 - [ ] Iniciar a estruturação da camada de Backend (API e Banco de Dados).
 - [ ] Conectar o formulário de `/login` com rotas de autenticação reais (ex: JWT ou NextAuth).
 - [ ] Configuração de um pipeline de CI/CD para automação de testes e deploy corporativo.
+
+---
+
+## 🌐 Como testar o Projeto
+
+Você pode acessar e interagir com a versão mais recente do projeto diretamente em produção através do link abaixo:
+
+🔗 **[Acessar Conecta 360º na Vercel](https://conecta360.vercel.app/)**
