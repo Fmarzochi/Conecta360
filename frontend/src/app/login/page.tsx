@@ -9,9 +9,12 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(''); // Novo estado para controlar o erro visual
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage(''); // Limpa mensagens de erro antigas antes de tentar novamente
+
     if (email.trim() !== '' && password.trim() !== '') {
       setIsLoading(true);
 
@@ -23,7 +26,8 @@ export default function Login() {
         });
 
         if (result?.error) {
-          alert('Falha na autenticação. Verifique suas credenciais.');
+          // Substituímos o alert() por uma mensagem na própria tela
+          setErrorMessage('E-mail ou senha incorretos. Verifique suas credenciais.');
           setIsLoading(false);
         } else {
           router.push('/backend-construcao');
@@ -31,6 +35,7 @@ export default function Login() {
         }
       } catch (error) {
         console.error('Erro ao realizar login:', error);
+        setErrorMessage('Ocorreu um erro inesperado. Tente novamente.');
         setIsLoading(false);
       }
     }
@@ -72,6 +77,13 @@ export default function Login() {
               className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all outline-none"
             />
           </div>
+
+          {/* Renderização condicional da mensagem de erro com estilo Tailwind */}
+          {errorMessage && (
+            <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg text-center animate-pulse">
+              {errorMessage}
+            </div>
+          )}
 
           <button
             type="submit"

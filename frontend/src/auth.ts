@@ -25,11 +25,9 @@ declare module "next-auth/jwt" {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  // Configuração obrigatória da estratégia de sessão
   session: {
     strategy: "jwt",
   },
-  // Chave secreta obrigatória para assinar o JWT
   secret: process.env.AUTH_SECRET,
   providers: [
     CredentialsProvider({
@@ -39,7 +37,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Senha", type: "password" }
       },
       async authorize(credentials) {
+        // LOGS PARA O TERMINAL: A prova real do que está acontecendo nos bastidores
+        console.log("➡️ Tentativa de login. E-mail digitado:", credentials?.email);
+        console.log("➡️ Senha recebida no servidor:", credentials?.password);
+
         if (!credentials?.email || !credentials?.password) {
+          console.log("❌ Bloqueado: Faltam credenciais.");
           return null;
         }
 
@@ -48,41 +51,41 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const userEmail = process.env.USER_EMAIL;
         const userPassword = process.env.USER_PASSWORD;
 
-        const roleAdmin = process.env.ROLE_ADMIN || "ADMIN";
-        const roleUser = process.env.ROLE_USER || "USER";
-
-        // VALIDAÇÃO: Usuário Administrador (ADMIN)
-        if (
-          adminEmail &&
-          adminPassword &&
-          credentials.email === adminEmail &&
-          credentials.password === adminPassword
-        ) {
-          return {
-            id: "1",
-            name: "Administrador",
-            email: adminEmail,
-            role: roleAdmin,
-            company_id: "tenant_01"
-          };
+        // 1. VALIDAÇÃO DO ADMINISTRADOR
+        if (credentials.email === adminEmail) {
+          if (credentials.password === adminPassword) {
+            console.log("✅ Sucesso: Admin autenticado!");
+            return {
+              id: "1",
+              name: "Administrador",
+              email: adminEmail,
+              role: process.env.ROLE_ADMIN || "ADMIN",
+              company_id: "tenant_01"
+            };
+          } else {
+            console.log("❌ Bloqueado: Senha do Admin está incorreta!");
+            return null; // Trava imediata aqui
+          }
         }
 
-        // VALIDAÇÃO: Usuário Comum (USER)
-        if (
-          userEmail &&
-          userPassword &&
-          credentials.email === userEmail &&
-          credentials.password === userPassword
-        ) {
-          return {
-            id: "2",
-            name: "Usuário Padrão",
-            email: userEmail,
-            role: roleUser,
-            company_id: "tenant_01"
-          };
+        // 2. VALIDAÇÃO DO USUÁRIO
+        if (credentials.email === userEmail) {
+          if (credentials.password === userPassword) {
+            console.log("✅ Sucesso: Usuário autenticado!");
+            return {
+              id: "2",
+              name: "Usuário Padrão",
+              email: userEmail,
+              role: process.env.ROLE_USER || "USER",
+              company_id: "tenant_01"
+            };
+          } else {
+            console.log("❌ Bloqueado: Senha do Usuário está incorreta!");
+            return null; // Trava imediata aqui
+          }
         }
 
+        console.log("❌ Bloqueado: E-mail não encontrado na base de dados.");
         return null;
       }
     })
@@ -98,15 +101,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     async session({ session, token }) {
       if (session.user) {
-        if (token.sub) {
-          session.user.id = token.sub;
-        }
-        if (token.role) {
-          session.user.role = token.role as string;
-        }
-        if (token.company_id) {
-          session.user.company_id = token.company_id as string;
-        }
+        if (token.sub) session.user.id = token.sub;
+        if (token.role) session.user.role = token.role as string;
+        if (token.company_id) session.user.company_id = token.company_id as string;
       }
       return session;
     }
@@ -114,6 +111,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     signIn: '/login',
   },
-  // Garante compatibilidade de URLs em diferentes ambientes (Localhost/Vercel)
   trustHost: true,
 });
