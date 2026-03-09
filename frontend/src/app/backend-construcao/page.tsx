@@ -1,7 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import { auth } from '@/auth';
 
-export default function BackendConstrucao() {
+export default async function BackendConstrucao() {
+  const session = await auth();
+  const role = session?.user?.role || 'USER';
+
+  const titulo = role === 'ADMIN' ? 'Administrador' : 'Usuário';
+
   return (
     <main className="min-h-screen w-full bg-black flex flex-col items-center justify-center px-4 text-center">
       <div className="bg-black p-12 rounded-3xl border border-slate-700 max-w-lg w-full shadow-2xl">
@@ -27,7 +33,7 @@ export default function BackendConstrucao() {
         </div>
 
         <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
-          Backend em <br className="hidden md:block" />
+          Backend do {titulo} em <br className="hidden md:block" />
           <span className="text-amber-500">construção</span>
         </h1>
 

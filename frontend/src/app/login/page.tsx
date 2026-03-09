@@ -2,16 +2,37 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email.trim() !== '' && password.trim() !== '') {
-      router.push('/backend-construcao');
+      setIsLoading(true);
+
+      try {
+        const result = await signIn('credentials', {
+          redirect: false,
+          email,
+          password,
+        });
+
+        if (result?.error) {
+          alert('Falha na autenticação. Verifique suas credenciais.');
+          setIsLoading(false);
+        } else {
+          router.push('/backend-construcao');
+          router.refresh();
+        }
+      } catch (error) {
+        console.error('Erro ao realizar login:', error);
+        setIsLoading(false);
+      }
     }
   };
 
@@ -54,9 +75,10 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center px-6 py-3.5 text-white text-[15px] font-semibold rounded-xl bg-black hover:bg-neutral-900 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50"
+            disabled={isLoading}
+            className="w-full inline-flex items-center justify-center px-6 py-3.5 text-white text-[15px] font-semibold rounded-xl bg-black hover:bg-neutral-900 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Entrar
+            {isLoading ? 'Autenticando...' : 'Entrar'}
           </button>
         </form>
       </div>
