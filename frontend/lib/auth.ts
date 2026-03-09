@@ -1,7 +1,8 @@
-import NextAuth, { DefaultSession } from "next-auth";
+import NextAuth, { type DefaultSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { JWT } from "@auth/core/jwt"; // Importação explícita para o TS não se perder
 
-// Estendendo os tipos nativos do NextAuth para a arquitetura SaaS
+// Estendendo os tipos nativos do NextAuth
 declare module "next-auth" {
   interface Session {
     user: {
@@ -10,33 +11,26 @@ declare module "next-auth" {
       company_id?: string;
     } & DefaultSession["user"];
   }
+
   interface User {
     role?: string;
     company_id?: string;
   }
 }
 
-declare module "next-auth/jwt" {
+// Forma mais segura de estender o JWT na v5
+declare module "@auth/core/jwt" {
   interface JWT {
     role?: string;
     company_id?: string;
   }
 }
 
-/**
- * CONFIGURAÇÃO CENTRAL DE AUTENTICAÇÃO
- * * Correção do erro MissingSecret:
- * 1. O 'secret' é definido como a primeira propriedade.
- * 2. O 'basePath' é configurado para coincidir com app/api/auth/[...auth]
- * 3. 'trustHost' é ativado para garantir o funcionamento em localhost e Vercel.
- */
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  secret: process.env.AUTH_SECRET,
-  basePath: "/api/auth",
   session: {
     strategy: "jwt",
   },
-  trustHost: true,
+  secret: process.env.AUTH_SECRET,
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -45,6 +39,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Senha", type: "password" }
       },
       async authorize(credentials) {
+        console.log("➡️ Tentativa de login. E-mail digitado:", credentials?.email);
+
         if (!credentials?.email || !credentials?.password) {
           return null;
         }
@@ -54,39 +50,32 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const userEmail = process.env.USER_EMAIL;
         const userPassword = process.env.USER_PASSWORD;
 
-        const roleAdmin = process.env.ROLE_ADMIN || "ADMIN";
-        const roleUser = process.env.ROLE_USER || "USER";
-
-        // Validação ADMIN
-        if (
-          adminEmail &&
-          adminPassword &&
-          credentials.email === adminEmail &&
-          credentials.password === adminPassword
-        ) {
-          return {
-            id: "1",
-            name: "Administrador",
-            email: adminEmail,
-            role: roleAdmin,
-            company_id: "empresa_01"
-          };
+        // 1. VALIDAÇÃO DO ADMINISTRADOR
+        if (credentials.email === adminEmail) {
+          if (credentials.password === adminPassword) {
+            return {
+              id: "1",
+              name: "Administrador",
+              email: adminEmail,
+              role: process.env.ROLE_ADMIN || "ADMIN",
+              company_id: "tenant_01"
+            };
+          }
+          return null;
         }
 
-        // Validação USER
-        if (
-          userEmail &&
-          userPassword &&
-          credentials.email === userEmail &&
-          credentials.password === userPassword
-        ) {
-          return {
-            id: "2",
-            name: "Usuário Padrão",
-            email: userEmail,
-            role: roleUser,
-            company_id: "empresa_01"
-          };
+        // 2. VALIDAÇÃO DO USUÁRIO
+        if (credentials.email === userEmail) {
+          if (credentials.password === userPassword) {
+            return {
+              id: "2",
+              name: "Usuário Padrão",
+              email: userEmail,
+              role: process.env.ROLE_USER || "USER",
+              company_id: "tenant_01"
+            };
+          }
+          return null;
         }
 
         return null;
@@ -114,4 +103,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     signIn: '/login',
   },
+  trustHost: true,
 });
